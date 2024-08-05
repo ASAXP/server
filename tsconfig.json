@@ -16,5 +16,7 @@
       "@/service/*": ["src/service/*"],
       "@/utils/*": ["src/utils/*"]
     }
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
 }
