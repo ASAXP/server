@@ -14,6 +14,7 @@
       "@/controller/*": ["src/controller/*"],
       "@/repository/*": ["src/repository/*"],
       "@/service/*": ["src/service/*"],
+      "@/middleware/*": ["src/middleware/*"],
       "@/utils/*": ["src/utils/*"]
     }
   },
