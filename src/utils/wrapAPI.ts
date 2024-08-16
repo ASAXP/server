@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 
-type AsyncFunction = (req: Request, res: Response) => Promise<any>;
+type AsyncFunction = (req: Request, res: Response) => void;
 
 const wrapAPI = (fn: AsyncFunction) => {
   return async (req: Request, res: Response, next: NextFunction) => {

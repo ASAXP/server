@@ -13,3 +13,5 @@ const globalErrorHandler = (
 
   res.send({ errors: [{ message: 'Some Error occured!' }] });
 };
+
+export { globalErrorHandler };
