@@ -29,13 +29,16 @@ const postStory = async (story: {
 };
 
 const updateStory = async (id: string, item: TStory) => {
-  const { fields, values, questionMarkString, matchingPair } =
-    queryBuilder(item);
-  const queryString = `update story set ${matchingPair} where storyID = ?`;
+  // const { fields, values, questionMarkString, matchingPair } =
+  //   queryBuilder(item);
+  const queryString = `update story set type = ?, title = ?, point = ? where storyID = ?`;
   const [rows] = await pool.query<ResultSetHeader>(queryString, [
-    ...values,
+    item.type,
+    item.title,
+    item.point,
     id,
   ]);
+  console.log(item, id);
   return rows;
 };
 

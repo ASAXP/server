@@ -44,7 +44,7 @@ StoryRouter.put(
     const { storyId } = req.params;
     const { body: story } = req;
     const result = await storyRepository.updateStory(storyId, story);
-    res.status(200).send('ok');
+    res.status(200).send({ status: 'ok' });
   }),
 );
 
