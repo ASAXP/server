@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "moduleResolution": "Node",
     "module": "CommonJS" /* Specify what module code is generated. */,
     "outDir": "./dist",
     "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
@@ -9,7 +10,7 @@
     "noImplicitAny": true /* Enable error reporting for expressions and declarations with an implied 'any' type. */,
     "strictNullChecks": true /* When type checking, take into account 'null' and 'undefined'. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
       "@/controller/*": ["src/controller/*"],
       "@/repository/*": ["src/repository/*"],
