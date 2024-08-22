@@ -1,8 +1,7 @@
-import { queryBuilder } from '../../utils/qsb';
+import { queryBuilder } from '../../utils/qsb.js';
 import { ResultSetHeader, RowDataPacket } from 'mysql2';
-import pool from '../../config/db/database';
-import { TStory } from '../../entities/story/schema/story.type';
-import wrapAPI from '@/utils/wrapAPI';
+import pool from '../../config/db/database.js';
+import { TStory } from '../../entities/story/schema/story.type.js';
 
 const getStoryList = async () => {
   const queryText = 'select * from story limit 10';

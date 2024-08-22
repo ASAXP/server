@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+    "target": "ESNext" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
     "moduleResolution": "Node",
-    "module": "CommonJS" /* Specify what module code is generated. */,
+    "module": "ESNext" /* Specify what module code is generated. */,
     "outDir": "./dist",
     "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
@@ -12,6 +12,7 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
     "baseUrl": ".",
     "paths": {
+      "@/*": ["src/*"],
       "@/controller/*": ["src/controller/*"],
       "@/repository/*": ["src/repository/*"],
       "@/service/*": ["src/service/*"],
@@ -20,5 +21,8 @@
     }
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "esm": true
+  }
 }

@@ -2,8 +2,8 @@ import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
-import { StoryRouter } from './controller/story';
-import { globalErrorHandler } from './utils/globalErrorHandler';
+import { StoryRouter } from './controller/story.js';
+import { globalErrorHandler } from './utils/globalErrorHandler.js';
 
 dotenv.config();
 

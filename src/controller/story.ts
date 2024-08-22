@@ -1,7 +1,7 @@
 import express from 'express';
-import wrapAPI from '../utils/wrapAPI';
+import wrapAPI from '../utils/wrapAPI.js';
 import { z } from 'zod';
-import { storyRepository } from '../repository/story/story.repository';
+import { storyRepository } from '../repository/story/story.repository.js';
 
 const StoryRouter = express.Router();
 
