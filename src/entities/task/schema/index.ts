@@ -1,1 +1,1 @@
-export * as TaskEntity from './task.type.ts';
+export * as TaskEntity from './task.type';

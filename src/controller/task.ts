@@ -1,8 +1,8 @@
 import express from 'express';
-import wrapAPI from '../utils/wrapAPI.ts';
+import wrapAPI from '../utils/wrapAPI';
 import { z } from 'zod';
-import { taskSchema } from 'src/entities/task/schema/task.type.ts';
-import { TaskRepository } from '@/repository/task/task.repository.ts';
+import { taskSchema } from 'src/entities/task/schema/task.type';
+import { TaskRepository } from '@/repository/task/task.repository';
 
 const TaskRouter = express.Router();
 

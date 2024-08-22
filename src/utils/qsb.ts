@@ -5,7 +5,9 @@ export type QueryObjectType = {
   matchingPair?: string;
 };
 
-const queryBuilder = (item: Record<string, string | number | null>) => {
+const queryBuilder = (
+  item: Record<string, string | number | null | undefined | boolean>,
+) => {
   return Object.entries(item).reduce<QueryObjectType>(
     (acc, [key, value], index) => {
       acc.fields.push(key);

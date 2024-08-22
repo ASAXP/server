@@ -1,7 +1,7 @@
-import { queryBuilder } from '@/utils/qsb.ts';
+import { queryBuilder } from '@/utils/qsb';
 import { ResultSetHeader, RowDataPacket } from 'mysql2';
-import pool from 'src/config/db/database.ts';
-import { TTask } from 'src/entities/task/schema/task.type.ts';
+import pool from 'src/config/db/database';
+import { TTask } from 'src/entities/task/schema/task.type';
 
 const getTaskList = async (id: number) => {
   const queryText = 'select * from task where storyID = ?';
