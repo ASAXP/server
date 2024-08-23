@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 const taskSchema = z.object({
-  taskID: z.number(),
+  taskID: z.number().nullish(),
   userID: z.number().nullish(),
   storyID: z.number(),
   description: z.string(),

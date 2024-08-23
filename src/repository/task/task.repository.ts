@@ -1,7 +1,7 @@
-import { queryBuilder } from '@/utils/qsb';
+import { queryBuilder } from '../../utils/qsb.js';
 import { ResultSetHeader, RowDataPacket } from 'mysql2';
-import pool from 'src/config/db/database.js';
-import { TTask } from 'src/entities/task/schema/task.type.js';
+import pool from '../../config/db/database.js';
+import { TTask } from '../../entities/task/schema/task.type.js';
 
 const getTaskList = async (id: number) => {
   const queryText = 'select * from task where storyID = ?';
@@ -19,27 +19,38 @@ const getTaskById = async (storyID: number, taskID: number) => {
 };
 
 const postTask = async (item: TTask) => {
-  const result = queryBuilder(item);
-  console.log('postTask', result);
-  //   const queryString = 'insert into task () VALUES ()';
-  //   const [rows] = await pool.query<ResultSetHeader>(queryString);
-  //   return rows.affectedRows;
-  return 0;
+  const question = Object.values(item).reduce<string>((acc, _, index) => {
+    if (index === 0) {
+      acc += '?';
+    } else {
+      acc += ', ?';
+    }
+    return acc;
+  }, '');
+  const queryString = `insert into task (${Object.keys(item).join(', ')}) VALUES (${question})`;
+  const [rows] = await pool.query<ResultSetHeader>(queryString, [
+    item.storyID,
+    item.description,
+    item.flag,
+  ]);
+  return rows.affectedRows;
 };
 
 const updateTask = async (id: string, item: TTask) => {
-  // const { fields, values, questionMarkString, matchingPair } =
-  //   queryBuilder(item);
+  const { fields, values, questionMarkString, matchingPair } =
+    queryBuilder(item);
   const queryString = `update story set type = ?, title = ?, point = ? where storyID = ?`;
 };
 
 const deleteTask = async (id: string) => {
   const queryString = `delete from task where taskID = ?`;
   const [rows] = await pool.query<ResultSetHeader>(queryString, [id]);
-  return true;
+  return rows.affectedRows;
 };
 
 export const TaskRepository = {
   getTaskList,
+  updateTask,
   postTask,
+  deleteTask,
 };

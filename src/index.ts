@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { StoryRouter } from './controller/story.js';
+import { TaskRouter } from './controller/task.js';
 import { globalErrorHandler } from './utils/globalErrorHandler.js';
 
 dotenv.config();
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
 });
 
 app.use(StoryRouter);
+app.use(TaskRouter);
 
 app.use(globalErrorHandler);
 

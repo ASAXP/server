@@ -10,14 +10,15 @@
     "noImplicitAny": true /* Enable error reporting for expressions and declarations with an implied 'any' type. */,
     "strictNullChecks": true /* When type checking, take into account 'null' and 'undefined'. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+    "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@/controller/*": ["src/controller/*"],
-      "@/repository/*": ["src/repository/*"],
-      "@/service/*": ["src/service/*"],
-      "@/middleware/*": ["src/middleware/*"],
-      "@/utils/*": ["src/utils/*"]
+      "@/*": ["./src/*"],
+      "@/controller/*": ["./src/controller/*"],
+      "@/repository/*": ["./src/repository/*"],
+      "@/service/*": ["./src/service/*"],
+      "@/middleware/*": ["./src/middleware/*"],
+      "@/utils/*": ["./src/utils/*"]
     }
   },
   "include": ["src/**/*"],
